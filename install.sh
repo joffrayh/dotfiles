@@ -79,5 +79,6 @@ Per-machine things to check:
   - Monitors: edit the MONITORS section of ~/.config/hypr/hyprland.lua
   - Lock screen: if the resolution isn't 1920x1080, run
       python3 ~/.config/hypr/lock/make-lock.py WIDTH HEIGHT
+  - GTK 4 theme: open nwg-look and click Apply (recreates ~/.config/gtk-4.0 links)
   - Reboot (or log out) so the shell, groups and services take effect.
 EOF

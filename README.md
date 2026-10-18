@@ -50,3 +50,5 @@ zsh as the login shell. It asks before the hardware packages and `/etc` files.
 - **Lock screen** image is drawn for 1920x1080; regenerate with `make-lock.py WIDTH HEIGHT`.
 - **PostgreSQL** isn't auto-enabled; run `initdb` first (see `packages/services.txt`).
 - GTK bookmarks aren't tracked (they need absolute `file://` paths).
+- GTK 4 theme links (`~/.config/gtk-4.0/gtk*.css` → `/usr/share/themes/Arc-Dark`) aren't tracked;
+  open nwg-look and click Apply to recreate them.
