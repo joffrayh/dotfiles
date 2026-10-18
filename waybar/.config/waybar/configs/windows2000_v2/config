@@ -1,0 +1,129 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "height": 48,
+    "spacing": 0,
+    "modules-left": [
+        "custom/start",
+        "custom/sep",
+        "custom/ql-term",
+        "custom/ql-web",
+        "custom/ql-files",
+        "custom/sep",
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "group/notify"
+    ],
+    "custom/start": {
+        "format": "Start",
+        "tooltip-format": "Click here to begin.",
+        "on-click": "pkill -x fuzzel || fuzzel"
+    },
+    "custom/sep": {
+        "format": " ",
+        "tooltip": false
+    },
+    "custom/ql-term": {
+        "format": "󰆍",
+        "tooltip-format": "Terminal",
+        "on-click": "foot"
+    },
+    "custom/ql-web": {
+        "format": "󰈹",
+        "tooltip-format": "Firefox",
+        "on-click": "firefox"
+    },
+    "custom/ql-files": {
+        "format": "󰉋",
+        "tooltip-format": "My Documents",
+        "on-click": "nemo"
+    },
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "format": "{windows}",
+        "windows-empty": "",
+        "format-window-separator": " ",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "class<firefox>": "󰈹",
+            "class<foot>": "󰆍",
+            "class<code>": "󰨞",
+            "class<dev.zed.Zed>": "",
+            "class<jetbrains-.*>": "",
+            "class<thunderbird>": "󰇮",
+            "class<nemo>": "󰉋",
+            "class<Slack>": "󰒱",
+            "class<mpv>": "󰐋",
+            "class<obs>": "󰑋"
+        },
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'"
+    },
+    "group/notify": {
+        "orientation": "horizontal",
+        "modules": [
+            "tray",
+            "cpu",
+            "pulseaudio",
+            "network",
+            "battery",
+            "custom/clock"
+        ]
+    },
+    "tray": {
+        "icon-size": 26,
+        "spacing": 4
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "󰖁",
+        "format-icons": {
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "tooltip-format": "Volume: {volume}%",
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "󰖩",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰖪",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}",
+        "tooltip-format-disconnected": "Not connected",
+        "on-click": "foot -e nmtui"
+    },
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-icons": [
+            "󰁺",
+            "󰁼",
+            "󰁾",
+            "󰂀",
+            "󰂂",
+            "󰁹"
+        ],
+        "tooltip-format": "{capacity}% remaining · {timeTo}"
+    },
+    "custom/clock": {
+        "exec": "~/.config/waybar/configs/windows2000_v2/clock.sh",
+        "return-type": "json",
+        "interval": 10,
+        "on-click": "~/.config/waybar/configs/windows2000_v2/calpopup.py"
+    },
+    "cpu": {
+        "format": "󰍛 {usage}%",
+        "interval": 2,
+        "tooltip-format": "CPU usage: {usage}%",
+        "on-click": "foot -e btop"
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "modules-left": ["clock", "hyprland/workspaces"],
+    "modules-right": ["network", "cpu", "memory", "pulseaudio", "battery"],
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+		"all-outputs": true,
+        "format": "{windows}",
+        "windows-empty": "󰨡",
+        "format-window-separator": " ",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+          "class<firefox>": "",
+          "foot": "",
+          "code": "󰨞",
+          "thunderbird": ""
+        }
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%a %d %b %Y}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "display-months": 3,
+            "stacked": true,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<b>{}</b>",
+                "weekdays": "{}",
+                "days": "{}",
+                "weeks": "W{}",
+                "today": "<b><u>{}</u></b>"
+            }
+        },
+        "actions": {
+            "on-click": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "network": {
+        "on-click": "foot -e nmtui",
+        "format": "{ifname}: {essid}",
+        "format-ethernet": "  {ipaddr}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "󰤮 Disconnected",
+		"tooltip-format": "Signal Strength: {signalStrength}%"
+    },
+    "cpu": {
+		"on-click": "foot -e btop",
+        "format": "  {usage}%"
+	},
+	"memory": {
+		"on-click": "foot -e btop",
+		"format": "󰘚 {used:0.1f}G",
+		"tooltip-format": "{used:0.1f}G / {total:0.1f}G used"
+	},
+	"pulseaudio": {
+		"on-click": "pavucontrol",
+		"format": "{icon}  {volume}%",
+        	"format-muted": "󰖁 Muted",
+        	"format-icons": {
+            	"headphone": "",
+                "hands-free": "󰓃",            	
+            	"headset": "",
+            	"default": ["", "", " "]
+            }
+    },
+
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-full": "󱈑 {capacity}%",
+        "format-icons": ["󱊡", "󱊢", "󱊣"],
+        "on-update": "~/.config/waybar/scripts/waybar-battery.sh"
+    }
+}

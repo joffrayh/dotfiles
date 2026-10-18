@@ -1,0 +1,9 @@
+[user]
+	email = joffrayh@icloud.com
+	name = joffrayh
+[alias]
+	cm = commit -m
+	st = status
+	aa = add .
+[init]
+	defaultBranch = main

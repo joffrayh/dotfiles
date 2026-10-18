@@ -1,0 +1,66 @@
+{
+    "workbench.sideBar.location": "right",
+    "editor.fontFamily": "\"JetBrainsMono Nerd Font Mono\"",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "hediet.vscode-drawio.theme": "kennedy",
+    "hediet.vscode-drawio.appearance": "dark",
+    "hediet.vscode-drawio.resizeImages": null,
+    "editor.rulers": [
+        120,
+        80              
+    ],
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "workbench.editorAssociations": {
+        "*.copilotmd": "vscode.markdown.preview.editor",
+        "file:/**/*.csv": "default",
+        "*.csv": "default"
+    },
+    "cSpell.language": "en-GB",
+    "cSpell.caseSensitive": true,
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.build.onSave": false,
+    "terminal.integrated.stickyScroll.enabled": false,
+    "files.autoSave": "afterDelay",
+    "chat.viewSessions.orientation": "stacked",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "git.addAICoAuthor": "off",
+    "github.copilot.nextEditSuggestions.eagerness": "low",
+    "workbench.colorTheme": "Dark+",
+    "claudeCode.preferredLocation": "panel",
+    "python.analysis.typeCheckingMode": "basic",
+    "[python]": {
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultColorDecorators": "never",
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": "off"
+    },
+    "notebook.editorOptionsCustomizations": {
+        "editor.tabSize": 4,
+        "editor.indentSize": 4,
+        "editor.insertSpaces": true
+    },
+    "python.analysis.extraPaths": [
+        "./.venv/lib/python3.13/site-packages"
+    ],
+    "latex-utilities.countWord.format": "${wordsBody} Words",
+    "telemetry.editStats.enabled": false,
+    "telemetry.feedback.enabled": false,
+    "dataWrangler.columnInsights.displayOnOpen": false,
+    "chat.fontSize": 15,
+    "chat.editor.fontSize": 15,
+    "keyboard.dispatch": "keyCode",
+    "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
+    "claudeCode.hideOnboarding": true,
+}

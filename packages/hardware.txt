@@ -1,0 +1,5 @@
+intel-ucode
+intel-media-driver
+xf86-video-intel
+tlp
+tlp-rdw

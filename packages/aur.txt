@@ -1,0 +1,11 @@
+arc-gtk-theme
+claude-code
+duo-desktop
+grimblast-git
+neofetch
+paru
+pycharm
+python-browser-cookie3
+rmtrash
+visual-studio-code-bin
+zotero

@@ -1,0 +1,22 @@
+[Default Applications]
+x-scheme-handler/mailto=userapp-Thunderbird-8MT1P2.desktop
+message/rfc822=userapp-Thunderbird-8MT1P2.desktop
+x-scheme-handler/mid=userapp-Thunderbird-8MT1P2.desktop
+x-scheme-handler/webcal=userapp-Thunderbird-ITCMP2.desktop
+text/calendar=userapp-Thunderbird-ITCMP2.desktop
+application/x-extension-ics=userapp-Thunderbird-ITCMP2.desktop
+x-scheme-handler/webcals=userapp-Thunderbird-ITCMP2.desktop
+image/jpeg=org.xfce.ristretto.desktop
+image/heif=oculante.desktop
+application/x-ipynb+json=code.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+x-scheme-handler/jetbrains=jetbrainsd.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-8MT1P2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-8MT1P2.desktop;
+x-scheme-handler/webcal=userapp-Thunderbird-ITCMP2.desktop;
+x-scheme-handler/webcals=userapp-Thunderbird-ITCMP2.desktop;
+image/jpeg=org.xfce.ristretto.desktop;
+image/heif=oculante.desktop;
+application/x-ipynb+json=code.desktop;

@@ -1,0 +1,54 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "margin-top": 8,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 0,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "cpu", "memory", "pulseaudio", "battery", "tray"],
+
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+        "persistent-workspaces": { "*": 5 }
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%a %d %b}",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    },
+    "network": {
+        "format-wifi": "<span color='#4f5b70'>NET</span> {essid}",
+        "format-ethernet": "<span color='#4f5b70'>NET</span> eth",
+        "format-disconnected": "<span color='#4f5b70'>NET</span> off",
+        "tooltip-format": "{ifname} {ipaddr} · {signalStrength}%",
+        "on-click": "foot -e nmtui"
+    },
+    "cpu": {
+        "format": "<span color='#4f5b70'>CPU</span> {usage}%",
+        "on-click": "foot -e btop"
+    },
+    "memory": {
+        "format": "<span color='#4f5b70'>MEM</span> {used:0.1f}G",
+        "on-click": "foot -e btop"
+    },
+    "pulseaudio": {
+        "format": "<span color='#4f5b70'>VOL</span> {volume}%",
+        "format-muted": "<span color='#4f5b70'>VOL</span> mute",
+        "on-click": "pavucontrol"
+    },
+    "battery": {
+        "states": { "warning": 20, "critical": 10 },
+        "format": "<span color='#4f5b70'>BAT</span> {capacity}%",
+        "format-charging": "<span color='#4f5b70'>BAT</span> {capacity}%+",
+        "format-alt": "<span color='#4f5b70'>BAT</span> {time}"
+    },
+    "tray": {
+        "spacing": 8
+    }
+}

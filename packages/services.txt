@@ -1,0 +1,18 @@
+# systemd units install.sh enables. "user:" prefix = systemctl --user.
+# Units whose package isn't installed are skipped.
+bluetooth.service
+docker.service
+duo-desktop.service
+keyd.service
+NetworkManager.service
+ntpd.service
+systemd-resolved.service
+tailscaled.service
+tlp.service
+ufw.service
+reflector.timer
+# postgresql.service  -- run initdb first: sudo -u postgres initdb -D /var/lib/postgres/data
+user:pipewire.socket
+user:pipewire-pulse.socket
+user:wireplumber.service
+user:gnome-keyring-daemon.socket

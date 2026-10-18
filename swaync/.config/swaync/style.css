@@ -1,0 +1,186 @@
+/* Import the system default theme, then scale + reskin on top of it. */
+@import url("file:///etc/xdg/swaync/style.css");
+
+/* ─────────────────────────────────────────────────────────────
+ * SIZE KNOBS
+ *   --scale      : grow/shrink the whole UI proportionally (1.0 = stock)
+ *   --inner-pad  : gap between text/content and the border
+ * ───────────────────────────────────────────────────────────── */
+:root {
+  --scale: 1.5;
+  --inner-pad: 8px;
+
+  /* Fonts (defaults 15px / 16px) */
+  --font-size-body: calc(15px * var(--scale));
+  --font-size-summary: calc(16px * var(--scale));
+
+  /* Icons — app-icon derives from this automatically */
+  --notification-icon-size: calc(64px * var(--scale));
+  --notification-group-icon-size: calc(32px * var(--scale));
+  --mpris-album-art-icon-size: calc(96px * var(--scale));
+  --widget-volume-row-icon-size: calc(24px * var(--scale));
+}
+
+/* ─────────────────────────────────────────────────────────────
+ * WINDOWS 2000 THEME (matches waybar/configs/windows2000)
+ *   face  = #c3c3c3 grey,  light = #ffffff,  dark = #808080
+ *   Raised bevel: light top/left, dark bottom/right.
+ *   Pressed bevel (hover/active): the reverse.
+ * ───────────────────────────────────────────────────────────── */
+:root {
+  --w2k-face: #c3c3c3;
+  --w2k-light: #ffffff;
+  --w2k-dark: #808080;
+  --w2k-hover: #dcdcdc;
+
+  /* Re-map the upstream palette to Win2k */
+  --text-color: black;
+  --text-color-disabled: #808080;
+  --cc-bg: #c3c3c3;
+  --noti-bg: 195, 195, 195;
+  --noti-bg-alpha: 1;
+  --noti-bg-hover: #dcdcdc;
+  --noti-bg-darker: #ffffff;
+  --border-radius: 0;            /* sharp corners everywhere */
+  --notification-shadow: none;   /* Win2k has no drop shadow */
+}
+
+/* Classic UI font */
+* {
+  font-family: "DejaVu Sans", sans-serif;
+}
+
+/* Square off the notification image (upstream makes it a circle) */
+.notification-row .notification-background .notification .notification-default-action .notification-content .image {
+  border-radius: 0;
+}
+
+/* The notification box = a raised Win2k panel */
+.notification-row .notification-background .notification {
+  background: var(--w2k-face);
+  border-radius: 0;
+  border-top: 2px solid var(--w2k-light);
+  border-left: 2px solid var(--w2k-light);
+  border-right: 2px solid var(--w2k-dark);
+  border-bottom: 2px solid var(--w2k-dark);
+  box-shadow: inset 1px 1px 0px var(--w2k-light),
+              inset -1px -1px 0px var(--w2k-dark);
+}
+
+/* Control center = one big raised panel */
+.control-center {
+  background: var(--w2k-face);
+  border-radius: 0;
+  border-top: 2px solid var(--w2k-light);
+  border-left: 2px solid var(--w2k-light);
+  border-right: 2px solid var(--w2k-dark);
+  border-bottom: 2px solid var(--w2k-dark);
+  box-shadow: inset 1px 1px 0px var(--w2k-light),
+              inset -1px -1px 0px var(--w2k-dark);
+}
+
+/* Close (X) button — small raised button, presses in on hover */
+.close-button {
+  min-width: calc(24px * var(--scale));
+  min-height: calc(24px * var(--scale));
+  margin-top: calc(8px * var(--scale));
+  margin-right: calc(8px * var(--scale));
+  background: var(--w2k-face);
+  color: black;
+  border-radius: 0;
+  border-top: 2px solid var(--w2k-light);
+  border-left: 2px solid var(--w2k-light);
+  border-right: 2px solid var(--w2k-dark);
+  border-bottom: 2px solid var(--w2k-dark);
+  box-shadow: inset 1px 1px 0px var(--w2k-light),
+              inset -1px -1px 0px var(--w2k-dark);
+}
+.close-button:hover {
+  background: var(--w2k-hover);
+  border-top: 2px solid var(--w2k-dark);
+  border-left: 2px solid var(--w2k-dark);
+  border-right: 2px solid var(--w2k-light);
+  border-bottom: 2px solid var(--w2k-light);
+  box-shadow: inset 1px 1px 0px var(--w2k-dark),
+              inset -1px -1px 0px var(--w2k-light);
+}
+
+/* Action / reply / control-center buttons — raised, press in on hover */
+.notification-action > button,
+.notification-default-action .inline-reply .inline-reply-button,
+.control-center button {
+  background: var(--w2k-face);
+  color: black;
+  border-radius: 0;
+  border-top: 2px solid var(--w2k-light);
+  border-left: 2px solid var(--w2k-light);
+  border-right: 2px solid var(--w2k-dark);
+  border-bottom: 2px solid var(--w2k-dark);
+  box-shadow: inset 1px 1px 0px var(--w2k-light),
+              inset -1px -1px 0px var(--w2k-dark);
+}
+.notification-action > button:hover,
+.notification-default-action .inline-reply .inline-reply-button:hover,
+.control-center button:hover {
+  background: var(--w2k-hover);
+  border-top: 2px solid var(--w2k-dark);
+  border-left: 2px solid var(--w2k-dark);
+  border-right: 2px solid var(--w2k-light);
+  border-bottom: 2px solid var(--w2k-light);
+  box-shadow: inset 1px 1px 0px var(--w2k-dark),
+              inset -1px -1px 0px var(--w2k-light);
+}
+
+/* Text reply field = sunken white Win2k input */
+.notification-default-action .inline-reply .inline-reply-entry {
+  background: #ffffff;
+  color: black;
+  border-radius: 0;
+  border-top: 2px solid var(--w2k-dark);
+  border-left: 2px solid var(--w2k-dark);
+  border-right: 2px solid var(--w2k-light);
+  border-bottom: 2px solid var(--w2k-light);
+  box-shadow: inset 1px 1px 0px var(--w2k-dark),
+              inset -1px -1px 0px var(--w2k-light);
+}
+
+/* ── Spacing that is hardcoded px upstream, scaled here ───────── */
+
+/* Outer padding around each popup */
+.notification-row .notification-background {
+  padding: calc(6px * var(--scale)) calc(12px * var(--scale));
+}
+
+/* Inner gap between the text/content and the notification border */
+.notification-row .notification-background .notification .notification-default-action,
+.notification-row .notification-background .notification .notification-default-action .notification-content {
+  padding: calc(var(--inner-pad) * var(--scale));
+}
+
+/* Control-center widget boxes */
+.widget {
+  margin: calc(8px * var(--scale));
+  padding: calc(8px * var(--scale));
+}
+
+/* Widget fonts use rem upstream; scale them too */
+.widget-title > label,
+.widget-inhibitors > label {
+  font-size: calc(1.5rem * var(--scale));
+}
+.widget-dnd label,
+.widget-label > label,
+.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-subtitle {
+  font-size: calc(1.1rem * var(--scale));
+}
+.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-title {
+  font-size: calc(1.25rem * var(--scale));
+}
+
+/* Media-player widget spacing */
+.widget-mpris .widget-mpris-player {
+  margin: calc(16px * var(--scale)) calc(20px * var(--scale));
+}
+.widget-mpris .widget-mpris-player .mpris-overlay {
+  padding: calc(16px * var(--scale));
+}

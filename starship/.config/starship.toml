@@ -1,0 +1,16 @@
+[character]
+format = '[ ](fg:#515356)'
+success_symbol = '[➜](bold fg:#515356)'
+error_symbol = '[✖](bold fg:#515356)'
+
+[git_branch]
+format = '➔ [$symbol$branch(:$remote_branch)]($style) '
+style = 'bold fg:#9590B3'
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = 'bold fg:#85A586'
+ahead = '⇡ x${count}'
+diverged = '⇕ ⇡ x${ahead_count} ⇣ x${behind_count}'
+behind = '⇣ x${count}'
+modified = '! x${count}'

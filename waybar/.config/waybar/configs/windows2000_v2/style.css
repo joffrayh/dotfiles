@@ -1,0 +1,169 @@
+/* windows2000_v2: a Windows 2000 style taskbar.
+   Palette: face #d4d0c8, highlight #ffffff, shadow #808080, dark shadow #404040 */
+* {
+    font-family: "Liberation Sans", "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 24px;
+    color: #000000;
+    border-radius: 0;
+    min-height: 0;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+window#waybar {
+    background: #d4d0c8;
+    border-top: 1px solid #d4d0c8;
+    box-shadow: inset 0 1px #ffffff;
+}
+
+/* Raised button bevel, shared by Start and the task buttons */
+#custom-start,
+#workspaces button {
+    margin: 3px 2px 2px 2px;
+    background: #d4d0c8;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ffffff #404040 #404040 #ffffff;
+    box-shadow: inset -1px -1px #808080;
+}
+
+/* Start button */
+#custom-start {
+    margin-left: 2px;
+    padding: 0 10px 0 42px;
+    font-weight: bold;
+    background-image: url("flag.png");
+    background-repeat: no-repeat;
+    background-position: 7px center;
+}
+
+#custom-start:hover {
+    background-color: #d4d0c8;
+}
+
+/* Etched separators */
+#custom-sep {
+    font-size: 1px;
+    min-width: 0;
+    margin: 6px 4px;
+    border-left: 1px solid #808080;
+    border-right: 1px solid #ffffff;
+}
+
+/* Quick Launch */
+#custom-ql-term,
+#custom-ql-web,
+#custom-ql-files {
+    font-size: 28px;
+    padding: 0 8px;
+    margin: 3px 0;
+    border: 1px solid transparent;
+}
+
+#custom-ql-term:hover,
+#custom-ql-web:hover,
+#custom-ql-files:hover {
+    border-color: #ffffff #808080 #808080 #ffffff;
+}
+
+#custom-ql-web   { color: #c8500a; }
+#custom-ql-files { color: #b08800; }
+
+/* Task buttons */
+#workspaces {
+    margin-left: 2px;
+}
+
+#workspaces button {
+    min-width: 0;
+    padding: 0 13px 0 7px; /* icon glyphs sit right of centre */
+    font-size: 26px;
+    color: #000000;
+}
+
+#workspaces button:hover {
+    background-color: #d4d0c8;
+}
+
+#workspaces button label {
+    color: #000000;
+}
+
+/* Pressed: sunken bevel over the classic checkered fill */
+#workspaces button.active {
+    border-color: #404040 #ffffff #ffffff #404040;
+    box-shadow: inset 1px 1px #808080;
+    background-image: url("dither.png");
+    background-repeat: repeat;
+}
+
+#workspaces button.active label {
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background: #0a246a;
+}
+
+#workspaces button.urgent label {
+    color: #ffffff;
+}
+
+/* Notification area: one sunken well holding tray, status icons and clock */
+#notify {
+    margin: 3px 2px 2px 2px;
+    padding: 0 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #808080 #ffffff #ffffff #808080;
+}
+
+#tray,
+#cpu,
+#pulseaudio,
+#network,
+#battery,
+#custom-clock {
+    padding: 0 10px;
+}
+
+#pulseaudio,
+#network {
+    font-size: 26px;
+}
+
+#custom-clock {
+    padding: 0 8px 0 12px;
+}
+
+#battery.warning:not(.charging) {
+    color: #806000;
+}
+
+#battery.critical:not(.charging) {
+    color: #c00000;
+    font-weight: bold;
+}
+
+/* Classic yellow tooltips */
+tooltip {
+    background: #ffffe1;
+    border: 1px solid #000000;
+}
+
+tooltip label {
+    color: #000000;
+    padding: 1px 2px;
+}
+
+/* Hide workspaces with no windows (Hyprland drops inactive empty ones;
+   this collapses the one you're currently on) */
+#workspaces button.empty {
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    background: none;
+    font-size: 0;
+}

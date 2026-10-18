@@ -1,0 +1,88 @@
+[
+  // === Workspace & Split Navigation ===
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "terminalFocus"
+  },
+
+  // === Terminal Toggle ===
+  {
+    "key": "ctrl+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+  },
+
+  // === File Explorer Navigation (h/l to collapse/expand) ===
+  {
+    "key": "l",
+    "command": "list.select",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "h",
+    "command": "list.collapse",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+
+  // === Non-conflicting LaTeX Build ===
+  {
+    "key": "ctrl+alt+r",
+    "command": "latex-workshop.build",
+    "when": "editorTextFocus && editorLangId == 'latex'"
+  },
+  // === Removing Some Defaults from NeoVime Plug-in ===
+  { "command": "-workbench.action.closeActiveEditor", "key": "ctrl+w q" },
+  { "command": "-workbench.action.focusNextGroup", "key": "ctrl+w ctrl+w" },
+  { "command": "-workbench.action.navigateUp", "key": "ctrl+w up" },
+  { "command": "-workbench.action.navigateUp", "key": "ctrl+w k" },
+  { "command": "-workbench.action.navigateDown", "key": "ctrl+w down" },
+  { "command": "-workbench.action.navigateDown", "key": "ctrl+w j" },
+  { "command": "-workbench.action.navigateLeft", "key": "ctrl+w left" },
+  { "command": "-workbench.action.navigateLeft", "key": "ctrl+w h" },
+  { "command": "-workbench.action.navigateRight", "key": "ctrl+w right" },
+  { "command": "-workbench.action.navigateRight", "key": "ctrl+w l" },
+  { "command": "-workbench.action.evenEditorWidths", "key": "ctrl+w =" },
+  { "command": "-workbench.action.toggleEditorWidths", "key": "ctrl+w _" },
+  { "command": "-workbench.action.increaseViewWidth", "key": "ctrl+w >" },
+  { "command": "-workbench.action.decreaseViewWidth", "key": "ctrl+w <" },
+  { "command": "-workbench.action.increaseViewHeight", "key": "ctrl+w +" },
+  { "command": "-workbench.action.decreaseViewHeight", "key": "ctrl+w -" },
+  { "command": "-workbench.action.splitEditorDown", "key": "ctrl+w s" },
+  { "command": "-workbench.action.splitEditorRight", "key": "ctrl+w v" }
+]
